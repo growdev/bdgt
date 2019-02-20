@@ -28,6 +28,7 @@ class Transaction extends Model
         'inflow',
         'cleared',
         'flair',
+        'note',
         'user_id',
     ];
 
