@@ -11,7 +11,7 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">{{ trans('labels.auth.login') }} <a class="pull-right" href="{{ route('register') }}">{{ trans('labels.auth.register_button') }}</a></div>
+				<div class="panel-heading">{{ trans('labels.auth.login') }} <?php //<a class="pull-right" href="{{ route('register') }}">{{ trans('labels.auth.register_button') }}</a> ?></div>
 				<div class="panel-body">
 					<form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
 						{{ csrf_field() }}
