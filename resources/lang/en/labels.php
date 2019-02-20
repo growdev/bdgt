@@ -163,6 +163,9 @@ return [
             ],
         ],
     ],
+    'import' => [
+        'singular' => 'Import',
+    ],
     'reports' => [
         'singular' => 'Report',
         'plural' => 'Reports',

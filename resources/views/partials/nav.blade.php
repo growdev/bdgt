@@ -19,6 +19,7 @@
 				<li class="{{ (request()->route()->getName() == 'dashboard' ? 'active' : '') }}"><a href="{{ route('dashboard') }}">Dashboard</a></li>
 				<li class="{{ (strpos(request()->route()->getName(), 'goals') !== false ? 'active' : '') }}"><a href="{{ route('goals.index') }}">{{ trans('labels.goals.plural') }}</a></li>
 				<li class="{{ (strpos(request()->route()->getName(), 'bills') !== false ? 'active' : '') }}"><a href="{{ route('bills.index') }}">{{ trans('labels.bills.plural') }}</a></li>
+				<li class="{{ (strpos(request()->route()->getName(), 'import') !== false ? 'active' : '') }}"><a href="{{ route('import.index') }}">{{ trans('labels.import.singular') }}</a></li>
 				<li class="dropdown {{ (strpos(request()->route()->getName(), 'reports') !== false ? 'active' : '') }}">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('labels.reports.plural') }} <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
