@@ -22,6 +22,15 @@
 
     <form method="POST" action="{{ route('import.upload') }}" aria-label="Import" enctype="multipart/form-data">
         @csrf
+
+        <div class="form-group row mb-0">
+            <label class="col-sm-3 control-label">{{ trans('labels.transactions.properties.account_id') }}</label>
+            <div class="col-sm-8">
+                <select class="form-control" name="account_id" required>
+                    @include('partials.dropdowns.accounts')
+                </select>
+            </div>
+        </div>
         <div class="form-group row mb-0">
             <div class="col-md-8 offset-md-4">
                 <input type="file" name="myfile" id="myfile" />
