@@ -2,6 +2,7 @@
 
 namespace Bdgt\Http\Controllers;
 
+use Bdgt\Resources\Transaction;
 use Illuminate\Http\Request;
 
 class ImportController extends Controller
@@ -33,8 +34,19 @@ class ImportController extends Controller
 
 		if ( count( $transactions ) ){
 			// Add transactions for each row
-			foreach( $transactions as $transaction ){
-
+			foreach( $transactions as $trans ){
+				$date = date( 'Y-m-d 00:00:00', strtotime($trans[1]));
+				$amount = str_replace('-', '', $trans[3] );
+				$inflow = ( 'CREDIT' === $trans[0] ) ? 1 : 0;
+				$new_trans = new Transaction( [
+					'date' => $date,
+					'account_id' => $request->account_id,
+					'payee' => $trans[2],
+					'amount' => $amount,
+					'inflow' => $inflow,
+					'note' => $trans[4] . ' ' . $trans[6]
+				]);
+				$new_trans->save();
 			}
 			return back()->with(['message'=>'Transactions imported.','status'=>'success']);
 		} else {
