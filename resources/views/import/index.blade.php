@@ -15,7 +15,7 @@
 
     <h2>Import Transactions</h2>
     @if(session()->get('message'))
-        <div class="alert alert-success">
+        <div class="alert alert-{{ session()->get('status') }}">
             {{ session()->get('message') }}
         </div>
     @endif
