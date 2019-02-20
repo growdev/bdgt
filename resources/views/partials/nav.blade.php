@@ -46,7 +46,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				@if (Auth::guest())
 					<li><a href="/login">{{ trans('labels.auth.login') }}</a></li>
-					<li><a href="/register">{{ trans('labels.auth.register') }}</a></li>
+					<?php //<li><a href="/register">{{ trans('labels.auth.register') }}</a></li> ?>
 				@else
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Account <span class="caret"></span></a>
