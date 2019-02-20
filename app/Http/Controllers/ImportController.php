@@ -14,9 +14,14 @@ class ImportController extends Controller
 
 	public function upload(Request $request)
 	{
-		//$request->validate([
+		$fileName = "fileName".time().'.'.request()->myfile->getClientOriginalExtension();
 
-		//]);
+		$request->myfile->storeAs('csv',$fileName);
+
+		\Log::error( '====>HELLO WORLD' );
+		$file = $request->allFiles();
+
+		\Log::error( print_r( $file, true ) );
 		return back()->with('message', 'File uploaded successfully!');
 	}
 }

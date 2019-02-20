@@ -82,7 +82,7 @@ Route::group(['middleware' => ['auth']], function () {
      */
 	Route::get('/import', 'ImportController@index')->name('import.index');
 
-	Route::post('import/upload', 'ImportController@index')->name('import.upload');
+	Route::post('import/upload', 'ImportController@upload')->name('import.upload');
 });
 
 /*
