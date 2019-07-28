@@ -40,7 +40,11 @@ class Category extends Model
 
     public function getProgressAttribute()
     {
-        return round(($this->spent / $this->budgeted) * 100);
+		if ( intval( $this->budgeted ) ) {
+			return round(($this->spent / $this->budgeted) * 100);
+		} else {
+			return 0;
+		}
     }
 
     public function transactions()
