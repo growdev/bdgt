@@ -33,6 +33,12 @@
 	</div>
 </div>
 <div class="form-group">
+    <label class="col-sm-3 control-label">{{ trans('labels.transactions.properties.notes') }}</label>
+    <div class="col-sm-8">
+        <input type="text" class="form-control" name="notes" >
+    </div>
+</div>
+<div class="form-group">
 	<label class="col-sm-3 control-label">{{ trans('labels.transactions.properties.account_id') }}</label>
 	<div class="col-sm-8">
 		<select class="form-control" name="account_id" required>

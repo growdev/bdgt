@@ -36,7 +36,8 @@
 			</span>
 		</td>
 		<td>
-			<span data-name="payee">{{ $transaction->payee }}</span>
+			<span data-name="payee">{{ $transaction->payee }}</span><br>
+            <span data-name="notes">{{ $transaction->notes }}</span>
 		</td>
 		<td>
 			@if ($transaction->inflow)

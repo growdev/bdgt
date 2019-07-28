@@ -184,6 +184,7 @@ return [
             'category_id' => 'Category',
             'bill_id' => 'Bill',
             'payee' => 'Payee',
+            'notes' => 'Notes',
             'amount' => 'Amount',
             'inflow' => 'Inflow',
             'outflow' => 'Outflow',
