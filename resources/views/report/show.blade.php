@@ -18,4 +18,23 @@
 
 @section('content')
 	<canvas id="bdgtReport" class="report" data-name="{{ $report->name }}" data-url="{{ $report->url }}" height="150%"></canvas>
+
+    <table>
+        <thead>
+        <tr><td>Category</td><td>Total</td></tr>
+        <thead>
+        <tbody></tbody>
+    <?php
+            $totals = $report->data['datasets'][0]['data'];
+            foreach ( $report->data['labels'] as $key => $label ){
+                echo '<tr><td>'. $label. '</td>';
+                echo '<td>';
+                echo $totals[$key];
+            }
+    ?>
+        <thead>
+
+    </table>
+
+
 @endsection

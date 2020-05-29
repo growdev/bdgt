@@ -22,9 +22,10 @@ class SpendingByCategory implements Reportable
     {
         $query = $this->transactionRepository->model();
 
-        // If no start date, initialize to 1 year ago
+        // If no start date, initialize to this month
         if (!$startDate) {
-            $startDate = new DateTime(date('Y-m-d'));
+            //$startDate = new DateTime(date('Y-m-d'));
+			$startDate = new DateTime( '2019-09-01');
             $monthInterval = new DateInterval('P1M');
             $monthInterval->invert = 1;
             $startDate->add($monthInterval);

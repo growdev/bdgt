@@ -25,6 +25,17 @@ class ReportController extends Controller
      */
     public function show($type)
     {
+
+    	if ( 'categorial' === $type ) {
+    		$results = ReportFactory::generate($type)
+				->forDateRange(Input::get('startDate'), Input::get('endDate'));
+			$report = (object)[
+				'name' => ReportFactory::generate($type)->name(),
+				'url' => 'ffff',
+				'data' => $results,
+			];
+    		return view ('report.show', compact( 'report' ) );
+		}
         $report = (object)[
             'name' => ReportFactory::generate($type)->name(),
             'url' => '/reports/ajax/' . $type,
@@ -33,7 +44,7 @@ class ReportController extends Controller
         return view('report.show', compact('report'));
     }
 
-    /**
+    /**wdss
      * Retrieve report data based on type
      * @param  string $type
      * @return Response
